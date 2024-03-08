@@ -1,0 +1,100 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome against localhost",
+            "url": "http://localhost:8080",
+            "webRoot": "${workspaceFolder}"
+        }
+    ]
+}
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StressBusterBot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #chat-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 300px;
+            max-width: 100%;
+            margin: auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        #chat-box {
+            overflow-y: auto;
+            max-height: 300px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        #user-input {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+
+        #send-button {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div id="chat-container">
+        <h1>Welcome to StressBusterBot!</h1>
+        <div id="chat-box"></div>
+        <input type="text" id="user-input" placeholder="Type your message..." required>
+        <button id="send-button" onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+        function sendMessage() {
+            var userMessage = document.getElementById('user-input').value;
+            document.getElementById('chat-box').innerHTML += '<p>You: ' + userMessage + '</p>';
+            document.getElementById('user-input').value = '';
+
+            // Add logic to send userMessage to the server and get StressBusterBot's response
+            // For simplicity, the actual server communication code is not included in this example
+
+            // Display StressBusterBot's response (replace this with the actual response)
+            var stressBusterBotResponse = "StressBusterBot: Placeholder response";
+            document.getElementById('chat-box').innerHTML += '<p>' + stressBusterBotResponse + '</p>';
+        }
+    </script>
+</body>
+</html>
